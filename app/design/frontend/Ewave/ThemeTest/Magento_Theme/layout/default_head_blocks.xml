@@ -1,0 +1,13 @@
+<page xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:framework:View/Layout/etc/page_configuration.xsd">
+    <head>
+        <!-- Add local resources -->
+        <css src="css/my-styles.css"/>
+        <!-- The following two ways to add local JavaScript files are equal -->
+        <script src="Magento_Theme::js/sample1.js"/>
+        <script src="http://127.0.0.1:35729/livereload.js" src_type="url"></script>
+
+        <link src="js/sample.js"/>
+        <!-- Add external resources -->
+        <link rel="stylesheet" type="text/css" src="http://fonts.googleapis.com/css?family=Montserrat" src_type="url" />
+    </head>
+</page>
