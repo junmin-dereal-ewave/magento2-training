@@ -9,5 +9,8 @@
     <body>
         <move element="product.info.stock.sku" destination="product.info.price" after="product.price.final"/>
         <move element="product.info.review" destination="product.info.main" before="product.info.price"/>
+        <referenceContainer name="sidebar.additional">
+            <block name="ThemeTest.test-block" class="Magento\Framework\View\Element\Template" template="Magento_Catalog::test-block.phtml" before="-" />
+        </referenceContainer>
     </body>
 </page>

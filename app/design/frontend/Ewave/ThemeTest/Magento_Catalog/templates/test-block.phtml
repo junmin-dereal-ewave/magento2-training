@@ -1,0 +1,23 @@
+<?php
+/**
+ * @var \Ewave\MagentoCatalog\Block\TestBlock $block
+ */
+
+?>
+
+<div class="block custom-block">
+    <h4 class="block-title">Good day!</h4>
+</div>
+
+<div class="block custom-block">
+    <h4 class="block-title">Test JS translation</h4>
+    <p id="translate-js"></p>
+</div>
+
+<h4 class="block-title"><?= /* @escapeNotVerified */ __('translated_title') ?></h4>
+
+<h6>(1)object</h6>
+<p data-mage-init='{"mystyle": {"color": "yellow"}}'>I am color Yellow <code>data-mage-init</code></p>
+
+<h6>(2)function</h6>
+<p data-mage-init='{"mystyle2": {"background": "blue"}}'>I have a blue background <code>data-mage-init</code></p>
