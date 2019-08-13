@@ -12,5 +12,10 @@
         <referenceContainer name="sidebar.additional">
             <block name="ThemeTest.test-block" class="Magento\Framework\View\Element\Template" template="Magento_Catalog::test-block.phtml" before="-" />
         </referenceContainer>
+        <referenceBlock name="ThemeTest.test-block">
+            <arguments>
+                <argument name="display_text" xsi:type="string" translate="true">Hello</argument>
+            </arguments>
+        </referenceBlock>
     </body>
 </page>
