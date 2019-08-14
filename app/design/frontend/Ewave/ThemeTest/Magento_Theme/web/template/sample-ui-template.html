@@ -1,0 +1,8 @@
+<!-- ko if: isActive() -->
+
+ <span data-bind="html: getTime()"></span>
+ <!-- ko foreach: getRegion('extra') -->
+     <!-- ko template: getTemplate() --><!-- /ko -->
+ <!--/ko-->
+
+<!--/ko-->

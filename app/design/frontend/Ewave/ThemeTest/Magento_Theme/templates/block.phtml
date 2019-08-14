@@ -1,0 +1,10 @@
+<div id="test-ui-component" data-bind="scope:'test-ui-component'">
+    <!-- ko template: getTemplate() --><!-- /ko -->
+</div>
+<script type="text/x-magento-init">
+    {
+        "#test-ui-component": {
+            "Magento_Ui/js/core/app": <?= /* @noEscape */ $block->getJsLayout();?>
+        }
+    }
+</script>
