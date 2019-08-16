@@ -1,0 +1,22 @@
+<table style="border:1px solid red;">
+    <tr>
+        <th>ns</th>
+        <td text="ns"></td>
+      </tr>
+    <tr>
+      <th>index</th>
+      <td text="index"></td>
+    </tr>
+    <tr>
+      <th>name</th>
+      <td text="name"></td>
+    </tr>
+    <tr if="elems().length">
+      <th>Children</th>
+      <td>
+        <each args="elems">
+          <render />
+        </each>
+      </td>
+    </tr>
+  </table>

@@ -16,6 +16,17 @@
                     </argument>
                 </arguments>
             </block>
+            <block class="Magento\Framework\View\Element\Template" name="magentotheme_basic_ui" template="Magento_Theme::basic-ui.phtml">
+                <arguments>
+                    <argument name="jsLayout" xsi:type="array">
+                        <item name="components" xsi:type="array">
+                            <item name="miComponent" xsi:type="array">
+                                <item name="component" xsi:type="string">Magento_Theme/js/view/mi-component</item>
+                            </item>
+                        </item>
+                    </argument>
+                </arguments>
+            </block>
         </referenceContainer>
         <referenceBlock name="report.bugs" remove="true" />
         <referenceBlock name="breadcrumbs" remove="true" />

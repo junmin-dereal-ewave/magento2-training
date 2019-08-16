@@ -1,0 +1,32 @@
+<h3 text="name"></h3>
+<h4 text="label"></h4>
+<table>
+  <thead>
+    <tr>
+      <th>name</th>
+      <th>qty</th>
+      <th>price</th>
+      <th>row total</th>
+    </tr>
+  </thead>
+  <tbody>
+    <!-- ko foreach: items  -->
+    <tr>
+      <th text="name"></th>
+      <td text="qty"></td>
+      <td text="price"></td>
+      <td text="$parent.rowTotal($data)"></td>
+    </tr>
+    <!-- /ko -->
+  </tbody>
+</table>
+<div>Additional charge: <text args="additional_charge"></text></div>
+<strong>Total: <text args="total()"></text></strong>
+
+
+
+<each args="getRegion('groupA')" render=""/>
+
+<!-- ko foreach: getRegion('groupB') -->
+    <!-- ko template: getTemplate() --><!-- /ko -->
+<!--/ko-->

@@ -1,0 +1,168 @@
+<?php
+/**
+ * @var Magento\Framework\View\Element\Template $block
+ */
+?>
+
+<h2>Plain View Model</h2>
+
+<div class="example" data-bind="scope: 'plainViewModel'">
+    <h5 data-bind="text: title"></h5>
+    <h5 data-bind="text: config.label"></h5>
+    <pre data-bind="text: JSON.stringify(config, null, 2)"></pre>
+</div>
+
+<script type="text/x-magento-init">
+    {
+        "*": {
+            "Magento_Ui/js/core/app": {
+                "components": {
+                    "plainViewModel": {
+                        "component": "Magento_Theme/js/view/plain-view-model",
+                        "label": "This is the label"
+                    }
+                }
+            }
+        }
+    }
+</script>
+
+
+
+<hr>
+
+
+
+<h2>Observable View Model</h2>
+<div class="example" data-bind="scope: 'obViewModel'">
+
+    <h5 data-bind="text: computedTitle"></h5>
+    <button data-bind="click: changeTitle" >change title</button>
+
+    <ul data-bind="foreach: list">
+        <li data-bind="text: name"></li>
+    </ul>
+    <button data-bind="click: listReplace">replace 1st list-data</button>
+
+</div>
+<script type="text/x-magento-init">
+    {
+        "*": {
+            "Magento_Ui/js/core/app": {
+                "components": {
+                    "obViewModel": {
+                        "component": "Magento_Theme/js/view/ob-view-model"
+                    }
+                }
+            }
+        }
+    }
+</script>
+
+
+
+
+<hr>
+
+
+
+<h2>Ui Component 1</h2>
+<div class="example" data-bind="scope: 'uiCp'">
+    <!-- ko template: getTemplate() --><!-- /ko -->
+    <!-- // if no template value in config, you still could declare template directly as below -->
+    <!-- //ko template: "Custom_HelloWorld/uiEl-view-model" --><!-- /ko -->
+</div>
+<script>
+/**
+ * - Inherit: (uiClass+Ko) > uiElement > uiComponent
+ * - Priority Order：JSON.config > JSON > VM.default > VM
+ * - inherit from uiElement, you CAN:
+ *      - merge config
+ *      - use “teamplate” value to fetch html template
+ *      - use magent
+*       - use binding syntax in html template，such as `<each><if><div translate="" text=""``
+ *          - https://devdocs.magento.com/guides/v2.3/ui_comp_guide/concepts/knockout-bindings.html
+ *          - https://devdocs.magento.com/guides/v2.3/ui_comp_guide/concepts/magento-bindings.html
+
+ * - inherit from uiComponent, you CAN:
+ *      - insrt children
+ *      - use displayArea & group
+ *      - children & root's ns(namespace) value === root's component name
+ *      -`require('uiRegistry').get('uiEl.child1.child2')`
+ *
+ **/
+</script>
+<script type="text/x-magento-init">
+    {
+        "*": {
+            "Magento_Ui/js/core/app": {
+                "components": {
+                    "uiCp": {
+                        "component": "Magento_Theme/js/view/uiEl-view-model",
+                        "config": {
+                            "template": "Magento_Theme/uiCp-view-model"
+                        },
+                        "children": {
+                            "uiEl1": {
+                                "component": "Magento_Theme/js/view/uiEl-view-model",
+                                "template": "Magento_Theme/uiEl-view-model",
+                                "children": {
+                                    "uiEl3": {
+                                        "component": "Magento_Theme/js/view/uiEl-view-model",
+                                        "template": "Magento_Theme/uiEl-view-model"
+                                    }
+                                }
+                            },
+                            "uiEl2": {
+                                "component": "Magento_Theme/js/view/uiEl-view-model",
+                                "template": "Magento_Theme/uiEl-view-model"
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+</script>
+
+
+
+<hr>
+
+
+
+<h2>Ui Component 2 -- displayArea/getRegion/</h2>
+<div class="example" data-bind="scope: 'ui-component'">
+    <!-- ko template: getTemplate() --><!-- /ko -->
+</div>
+<script type="text/x-magento-init">
+    {
+        "*": {
+            "Magento_Ui/js/core/app": {
+                "components": {
+                    "ui-component": {
+                        "component": "Magento_Theme/js/view/ui-component",
+                        "template": "Magento_Theme/ui-component",
+                        "children": {
+                            "child1": {
+                                "displayArea": "groupB",
+                                "component": "Magento_Theme/js/view/uiEl-view-model",
+                                "template": "Magento_Theme/uiEl-view-model"
+                            },
+                            "child2": {
+                                "displayArea": "groupA",
+                                "component": "Magento_Theme/js/view/uiEl-view-model",
+                                "template": "Magento_Theme/uiEl-view-model"
+                            },
+                            "child3": {
+                                "displayArea": "groupB",
+                                "component": "Magento_Theme/js/view/uiEl-view-model",
+                                "template": "Magento_Theme/uiEl-view-model"
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+</script>
